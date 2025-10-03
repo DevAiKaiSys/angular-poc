@@ -6,6 +6,9 @@
     "paths": {
       "components-ui-lib": [
         "./dist/components-ui-lib"
+      ],
+      "@components-ui-lib": [
+        "./projects/components-ui-lib/src/public-api.ts"
       ]
     },
     "strict": true,
