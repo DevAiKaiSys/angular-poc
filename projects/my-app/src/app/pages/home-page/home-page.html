@@ -1,0 +1,27 @@
+<div class="header-buttons">
+    <button [class.active]="currentView === 'single'" (click)="setView('single')">
+        Single Selection
+    </button>
+
+    <button [class.active]="currentView === 'multi'" (click)="setView('multi')">
+        Multi Selection
+    </button>
+
+    <button [class.active]="currentView === 'events'" (click)="setView('events')">
+        Event Popup/Console
+    </button>
+</div>
+
+<div class="content-container">
+    @if (currentView === 'single') {
+    <lib-single-row-selection />
+    }
+
+    @if (currentView === 'multi') {
+    <lib-multi-row-selection />
+    }
+
+    @if (currentView === 'events') {
+    <lib-example-row-clicked-event />
+    }
+</div>

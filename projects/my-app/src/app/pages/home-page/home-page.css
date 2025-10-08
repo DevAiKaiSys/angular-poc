@@ -1,0 +1,46 @@
+/* 1. กำหนดให้ HomePage Component แสดงเต็มพื้นที่ (Full-screen host) */
+:host {
+    display: flex;
+    flex-direction: column;
+    /* จัดเรียงปุ่มด้านบน และ content ด้านล่าง */
+    height: 100%;
+    /* สำคัญมาก: เพื่อรับความสูง 100% จาก app-root */
+}
+
+/* 2. จัดรูปแบบปุ่ม */
+.header-buttons {
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    gap: 10px;
+}
+
+.header-buttons button {
+    padding: 8px 15px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.header-buttons button.active {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+/* 3. กำหนดให้ Content Container แสดงเต็มพื้นที่ที่เหลือ */
+.content-container {
+    flex-grow: 1;
+    /* ใช้พื้นที่ที่เหลือทั้งหมด */
+    min-height: 0;
+    /* ป้องกันไม่ให้ content container ยืดเกินไป */
+    padding: 20px;
+}
+
+/* 4. กำหนดให้ Component ลูกใน Content Container แสดงเต็มพื้นที่ */
+.content-container> :host {
+    /* display: block; */
+    height: 100%;
+}

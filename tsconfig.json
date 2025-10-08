@@ -8,7 +8,7 @@
         "./dist/ag-grid-lib"
       ],
       "@ag-grid-lib": [
-        "projects/ag-grid-lib/src/public-api.ts"
+        "./projects/ag-grid-lib/src/public-api.ts"
       ]
     },
     "strict": true,
