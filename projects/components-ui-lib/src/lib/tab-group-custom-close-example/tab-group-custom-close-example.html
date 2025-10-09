@@ -1,0 +1,14 @@
+<mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start" [selectedIndex]="selected.value"
+    (selectedIndexChange)="selected.setValue($event)">
+    @for (tab of tabs; track tab; let index = $index) {
+    <mat-tab [label]="tab">
+        <ng-template mat-tab-label>
+            {{tab}}
+            <button matIconButton class="example-tab-icon" (click)="removeTab(index)">
+                <mat-icon>close</mat-icon>
+            </button>
+        </ng-template>
+        Contents for {{tab}} tab
+    </mat-tab>
+    }
+</mat-tab-group>

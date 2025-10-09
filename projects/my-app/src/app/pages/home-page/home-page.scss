@@ -1,0 +1,91 @@
+/* home-page.scss (ปรับปรุงเลย์เอาต์ Flexbox) */
+
+.page-container {
+    /* *** จุดสำคัญที่ 1: ทำให้ container เป็น Flex ในแนวตั้ง และกินพื้นที่ 100% ของหน้าจอ *** */
+    display: flex;
+    /* จัดเรียงองค์ประกอบย่อยในแนวตั้ง */
+    flex-direction: column;
+    /* กำหนดให้ page-container สูงเต็ม Viewport */
+    height: 100%;
+}
+
+/* ------------------------------------------- */
+/* สไตล์สำหรับ Row 1 และ Row 2 (กลุ่มปุ่ม) */
+/* ------------------------------------------- */
+.row-1-selectors,
+.row-2-selectors {
+    /* Row 1 และ 2: กำหนดให้ไม่ขยายตัว (Fixed Size) */
+    flex-shrink: 0;
+
+    display: flex;
+    gap: 15px;
+    margin: 10px 0;
+    padding: 0 10px;
+}
+
+
+/* ------------------------------------------- */
+/* การกำหนดสี Active โดยใช้ Class ของ Angular Material */
+/* ------------------------------------------- */
+
+/* สไตล์สำหรับปุ่ม Active ใน Row 1 (Primary) */
+/* Selector: เลือกปุ่มที่เป็น Unelevated และมีคลาสสี mat-primary */
+.row-1-selectors .mat-mdc-unelevated-button.mat-primary {
+    /* สี Primary ที่เข้มขึ้นเล็กน้อย (Darker Primary) */
+    background-color: #1976d2;
+    color: white;
+    font-weight: bold;
+}
+
+/* สไตล์สำหรับปุ่ม Active ใน Row 2 (Accent) */
+/* Selector: เลือกปุ่มที่เป็น Unelevated และมีคลาสสี mat-accent */
+/* (เราใช้ 'accent' สำหรับ Row 2 ในไฟล์ .html) */
+.row-2-selectors .mat-mdc-unelevated-button.mat-accent {
+    /* สี Accent (Pink) */
+    background-color: #ff4081;
+    color: white;
+    font-weight: bold;
+}
+
+/* สไตล์สำหรับปุ่ม Non-Active (mat-basic) */
+/* เรากำหนดให้ปุ่ม basic มีสีพื้นหลังเป็นสีอ่อนเพื่อให้แตกต่างจากปุ่ม active */
+.row-1-selectors .mat-mdc-unelevated-button.mat-basic,
+.row-2-selectors .mat-mdc-unelevated-button.mat-basic {
+    background-color: #f0f0f0;
+    /* สีเทาอ่อน */
+    color: rgba(0, 0, 0, 0.87);
+    /* สีตัวอักษรมาตรฐาน */
+}
+
+
+/* ------------------------------------------- */
+/* สไตล์สำหรับ Component Content */
+/* ------------------------------------------- */
+.content-area {
+    /* *** จุดสำคัญที่ 2: ทำให้ Content Area ขยายตัว *** */
+    flex-grow: 1;
+    /* ทำให้ content-area ขยายตัวเพื่อกินพื้นที่ว่างที่เหลือ */
+
+    /* *** การตั้งค่า Overflow *** */
+    /* เนื่องจากตอนนี้ content-area กินพื้นที่ที่เหลือทั้งหมด เราจึงกำหนด overflow เพื่อให้มี scrollbar 
+       เฉพาะส่วน content เท่านั้น หากเนื้อหาเกินพื้นที่ของมัน */
+    overflow-y: auto;
+
+    /* สไตล์การแสดงผล */
+    margin: 0 20px 20px 20px;
+    /* ปรับ margin: ด้านบน (0) เพราะมี mat-divider, ด้านข้าง (20px), ด้านล่าง (20px) */
+    padding: 20px;
+    border: 1px dashed #cccccc;
+    border-radius: 4px;
+}
+
+/* ------------------------------------------- */
+/* การกำหนดสี Active และ Divider */
+/* ------------------------------------------- */
+/* ... (ส่วนนี้ใช้โค้ดเดิมของคุณ) ... */
+
+mat-divider {
+    /* ทำให้ divider ไม่ขยายตัว (Fixed Size) */
+    flex-shrink: 0;
+    margin: 10px 0;
+}

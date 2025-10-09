@@ -1,0 +1,7 @@
+.example-tab-icon {
+    margin-left: 8px;
+}
+
+::ng-deep .mdc-tab {
+    padding-right: 0px !important;
+}

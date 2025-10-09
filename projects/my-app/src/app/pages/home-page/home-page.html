@@ -1,1 +1,50 @@
-<lib-button-overview-example></lib-button-overview-example>
+<div class="page-container">
+
+    <div class="row-1-selectors button-group">
+        @for (type of componentTypes; track type.key) {
+        <button mat-flat-button [color]="selectedComponentType === type.key ? 'primary' : 'basic'"
+            (click)="selectComponentType(type.key)">
+            {{ type.label }}
+        </button>
+        }
+    </div>
+
+    <mat-divider></mat-divider>
+
+    @if (subComponentsMap[selectedComponentType]) {
+    <div class="row-2-selectors button-group">
+        @for (sub of subComponentsMap[selectedComponentType]; track sub.key) {
+        <button mat-flat-button [color]="selectedSubComponent === sub.key ? 'accent' : 'basic'"
+            (click)="selectSubComponent(sub.key)">
+            {{ sub.label }}
+        </button>
+        }
+    </div>
+    }
+
+    <mat-divider></mat-divider>
+
+    <div class="content-area">
+
+        @if (selectedComponentType === 'buttons') {
+        @if (selectedSubComponent === 'basicButton') {
+        <lib-button-overview-example></lib-button-overview-example>
+        }
+        @if (selectedSubComponent === 'toggleButton') {
+        <lib-button-toggle-mode-example></lib-button-toggle-mode-example>
+        }
+        }
+
+        @if (selectedComponentType === 'tabs') {
+        @if (selectedSubComponent === 'dynamicTab') {
+        <lib-tab-group-dynamic-example></lib-tab-group-dynamic-example>
+        }
+        @if (selectedSubComponent === 'customTabGroup') {
+        <lib-tab-group-custom-close-example></lib-tab-group-custom-close-example>
+
+        }
+        }
+
+    </div>
+
+</div>

@@ -39,6 +39,20 @@
 }
 ```
 
+### most use
+
+[Migration to Control Flow syntax](https://angular.dev/reference/migrations/control-flow)
+
+```
+ng generate @angular/core:control-flow
+```
+
+[Testing in continuous integration](https://angular.dev/guide/testing#testing-in-continuous-integration)
+
+```
+ng test --no-watch --no-progress --browsers=ChromeHeadless
+```
+
 ## 📚 Reference
 
 [Multiple projects](https://angular.dev/reference/configs/file-structure#multiple-projects)
