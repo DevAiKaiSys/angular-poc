@@ -58,3 +58,5 @@ ng test --no-watch --no-progress --browsers=ChromeHeadless
 [Multiple projects](https://angular.dev/reference/configs/file-structure#multiple-projects)
 
 [Angular Material Components](https://material.angular.dev/components/categories)
+
+[Angular Material Icons](https://fonts.google.com/icons?query=Material+Icons&icon.set=Material+Icons)
